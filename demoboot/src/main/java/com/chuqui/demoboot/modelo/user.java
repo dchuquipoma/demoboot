@@ -3,6 +3,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class user {
@@ -10,8 +11,11 @@ public class user {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	@Size(max=10)
 	private String username;
 	
+
+
 	private String address;
 	
 	private String email;

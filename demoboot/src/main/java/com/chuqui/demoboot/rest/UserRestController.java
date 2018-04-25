@@ -32,6 +32,14 @@ public class UserRestController {
 	        return new ResponseEntity<List<user>>(users, HttpStatus.OK);
 	    }
 	   
+	   @RequestMapping(value = "/userid/{id}", method = RequestMethod.GET)
+	    public ResponseEntity<user> listoneuser(@PathVariable("id") long id) {
+	    	user currentUser = userService.findById(id);
+	     
+	        return new ResponseEntity<user>(currentUser, HttpStatus.OK);
+	    }
+	   
+	   
 	   
 	   @RequestMapping(value = "/user/", method = RequestMethod.POST)
 	    public ResponseEntity<Void> createUser(@RequestBody user User,    UriComponentsBuilder ucBuilder) {
