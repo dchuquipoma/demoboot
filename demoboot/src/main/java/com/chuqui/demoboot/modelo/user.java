@@ -10,7 +10,6 @@ public class user {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	
 	@Size(max=10)
 	private String username;
 	
